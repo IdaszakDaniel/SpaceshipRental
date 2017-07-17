@@ -1,0 +1,7 @@
+<ul>
+	<li *ngFor="let user of data"> {{ user.name }}</li>
+</ul>
+<button class="btn btn-success" routerLink="/list" (click)="setQuery()">next</button> 
+
+
+<div><input type="text" [(ngModel)]="name"></div>{{name}}
