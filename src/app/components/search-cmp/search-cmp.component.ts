@@ -7,6 +7,7 @@ import {IMyDrpOptions} from 'mydaterangepicker';
   templateUrl: './search-cmp.component.html',
   styleUrls: ['./search-cmp.component.sass']
 })
+
 export class SearchCmpComponent implements OnInit {
   
   name:string;
@@ -19,22 +20,23 @@ export class SearchCmpComponent implements OnInit {
   userQuery;
   userPickup:string;
   userDropoff:string;
-  userSeats:number;d
+  userSeats:number;
   userCannons:string;
   userAcc:number;
   userSpeed:number;
   
   constructor(userQueryService:UserQueryService) { 
     this.userQuery = userQueryService;
+  }
+
+  ngOnInit() {
+
     this.pickUp = ["Poznań","Wrocław","Warszawa"];
     this.dropOff = ["Poznań","Wrocław","Warszawa"];
     this.seats = [1,3,4];
     this.cannons = ["four single lasers","two twin lasers","three twin lasers","two quad lasers","ion cannon"];
     this.maxAcc = [3700, 5000, 1400, 3000, 2500];
     this.atmosphericSpeed = [1050, 1260, 850, 1000];
-  }
-
-  ngOnInit() {
   }
 
   setQuery() {
@@ -50,7 +52,7 @@ export class SearchCmpComponent implements OnInit {
   private myDateRangePickerOptions: IMyDrpOptions = {
         dateFormat: 'dd.mm.yyyy',
   };
-  
+
   private model: Object = {beginDate: {year: 2018, month: 10, day: 9},
                              endDate: {year: 2018, month: 10, day: 19}};
 

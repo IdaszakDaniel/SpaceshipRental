@@ -11,15 +11,19 @@ import { ResourceService } from '../../services/resource.service';
 export class ListCmpComponent implements OnInit {
 
   data:any[] = [];	
+  query:any;
+  userQuery;
 
   constructor(public resourceService:ResourceService, userQueryService:UserQueryService) {
   	this.resourceService.getData().subscribe(users => {
   		this.data = users;
   	});
-  	console.log(userQueryService.getName()); 
+  	this.userQuery = userQueryService;
   }
 
   ngOnInit() {
+    this.query = this.userQuery.getName();
+    console.log(this.query)
   }
 
 }
