@@ -1,3 +1,31 @@
-<p>
-  list-cmp works!
-</p>
+<table class="table table-hover">
+  <thead>
+  	<tr>
+  		<th></th>
+	  	<th>NAME</th>
+	  	<th>DESCRIPTION</th>
+	  	<th>CANNON</th>
+	  	<th>PICK-UP</th>
+	  	<th>DROP-OFF</th>
+	  	<th>SEATS</th>
+	  	<th>MAX ACCELERATION</th>
+	  	<th>ATMOSPHERIC SPEED</th>
+  	</tr>
+  </thead>
+  <tbody >
+  	<tr *ngFor="let spaceship of data">
+  		<td><img class="spaceship__image" src="../../assets/{{spaceship.img}}" alt=""></td>
+  		<td>{{spaceship.name}}</td>
+  		<td>{{spaceship.desc}}</td>
+  		<td>{{spaceship.cannon}}</td>
+  		<td>{{spaceship.pickup}}</td>
+  		<td>{{spaceship.dropoff}}</td>
+  		<td>{{spaceship.seats}}</td>
+  		<td>{{spaceship.max-acc}}</td>
+  		<td>{{spaceship.atmospheric-speed}}</td>
+  	</tr>
+  </tbody>
+</table>
+
+
+<!-- <app-search-cmp></app-search-cmp> -->

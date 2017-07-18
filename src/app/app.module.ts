@@ -11,6 +11,8 @@ import { ListCmpComponent } from './components/list-cmp/list-cmp.component';
 import { ResourceService } from './services/resource.service';
 import { UserQueryService } from './services/user-query.service';
 
+import { MyDateRangePickerModule } from 'mydaterangepicker';
+
 const appRoutes: Routes = [
   {path: '', component:SearchCmpComponent},
   {path: 'list', component:ListCmpComponent}
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MyDateRangePickerModule
   ],
   providers: [
     ResourceService,

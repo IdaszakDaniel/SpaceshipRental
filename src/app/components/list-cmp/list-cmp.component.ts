@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserQueryService } from '../../services/user-query.service';
+import { ResourceService } from '../../services/resource.service';
 
 @Component({
   selector: 'app-list-cmp',
@@ -9,7 +10,12 @@ import { UserQueryService } from '../../services/user-query.service';
 
 export class ListCmpComponent implements OnInit {
 
-  constructor(public userQueryService:UserQueryService) {
+  data:any[] = [];	
+
+  constructor(public resourceService:ResourceService, userQueryService:UserQueryService) {
+  	this.resourceService.getData().subscribe(users => {
+  		this.data = users;
+  	});
   	console.log(userQueryService.getName()); 
   }
 

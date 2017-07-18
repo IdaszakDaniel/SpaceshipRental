@@ -9,7 +9,7 @@ export class ResourceService {
   }
 
   getData(){
-  	return this.http.get('http://jsonplaceholder.typicode.com/users').map(res => res.json());
+  	return this.http.get('assets/spaceships.json').map(res => res.json());
   }
 
 }

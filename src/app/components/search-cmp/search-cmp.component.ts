@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResourceService } from '../../services/resource.service';
 import { UserQueryService } from '../../services/user-query.service';
+import {IMyDrpOptions} from 'mydaterangepicker';
 
 @Component({
   selector: 'app-search-cmp',
@@ -9,23 +9,49 @@ import { UserQueryService } from '../../services/user-query.service';
 })
 export class SearchCmpComponent implements OnInit {
   
-  data:any[];	
   name:string;
+  pickUp:string[];
+  dropOff:string[];
+  seats:number[];
+  cannons:string[];
+  maxAcc:number[];
+  atmosphericSpeed:number[];
   userQuery;
+  userPickup:string;
+  userDropoff:string;
+  userSeats:number;d
+  userCannons:string;
+  userAcc:number;
+  userSpeed:number;
   
-  constructor(public resourceService:ResourceService, userQueryService:UserQueryService) { 
-  	this.resourceService.getData().subscribe(users => {
-  		console.log(users);
-  		this.data = users;
-  	});
+  constructor(userQueryService:UserQueryService) { 
     this.userQuery = userQueryService;
+    this.pickUp = ["Poznań","Wrocław","Warszawa"];
+    this.dropOff = ["Poznań","Wrocław","Warszawa"];
+    this.seats = [1,3,4];
+    this.cannons = ["four single lasers","two twin lasers","three twin lasers","two quad lasers","ion cannon"];
+    this.maxAcc = [3700, 5000, 1400, 3000, 2500];
+    this.atmosphericSpeed = [1050, 1260, 850, 1000];
   }
 
   ngOnInit() {
   }
 
   setQuery() {
-  	this.userQuery.setName(this.name);
+  	this.userQuery.setName( this.model, 
+                            this.userPickup,
+                            this.userDropoff,
+                            this.userSeats,
+                            this.userCannons,
+                            this.userAcc,
+                            this.userSpeed );
   }
+
+  private myDateRangePickerOptions: IMyDrpOptions = {
+        dateFormat: 'dd.mm.yyyy',
+  };
+  
+  private model: Object = {beginDate: {year: 2018, month: 10, day: 9},
+                             endDate: {year: 2018, month: 10, day: 19}};
 
 }
