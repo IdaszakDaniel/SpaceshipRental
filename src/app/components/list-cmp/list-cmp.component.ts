@@ -15,15 +15,15 @@ export class ListCmpComponent implements OnInit {
   userQuery;
 
   constructor(public resourceService:ResourceService, userQueryService:UserQueryService) {
+    this.userQuery = userQueryService;
+    this.query = this.userQuery.getName();
   	this.resourceService.getData().subscribe(users => {
   		this.data = users;
   	});
-  	this.userQuery = userQueryService;
+  	
   }
 
   ngOnInit() {
-    this.query = this.userQuery.getName();
-    console.log(this.query)
   }
 
 }

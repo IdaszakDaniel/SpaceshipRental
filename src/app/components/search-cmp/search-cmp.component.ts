@@ -24,6 +24,7 @@ export class SearchCmpComponent implements OnInit {
   userCannons:string;
   userAcc:number;
   userSpeed:number;
+
   
   constructor(userQueryService:UserQueryService) { 
     this.userQuery = userQueryService;

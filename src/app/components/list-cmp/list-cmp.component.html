@@ -13,7 +13,7 @@
   	</tr>
   </thead>
   <tbody >
-  	<tr *ngFor="let spaceship of data">
+  	<tr *ngFor=" let spaceship of (data | imageFilter:query.pickup:query.dropoff:query.cannon:query.seats)">
   		<td><img class="spaceship__image" src="../../assets/{{spaceship.img}}" alt=""></td>
   		<td>{{spaceship.name}}</td>
   		<td>{{spaceship.desc}}</td>

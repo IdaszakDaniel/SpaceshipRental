@@ -11,6 +11,8 @@ import { ListCmpComponent } from './components/list-cmp/list-cmp.component';
 import { ResourceService } from './services/resource.service';
 import { UserQueryService } from './services/user-query.service';
 
+import { ImageFilterPipe } from './components/list-cmp/imageFilter.pipe';
+
 import { MyDateRangePickerModule } from 'mydaterangepicker';
 
 const appRoutes: Routes = [
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SearchCmpComponent,
-    ListCmpComponent
+    ListCmpComponent,
+    ImageFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     ResourceService,
-    UserQueryService
+    UserQueryService,
+    ImageFilterPipe
   ],
   bootstrap: [AppComponent]
 })
