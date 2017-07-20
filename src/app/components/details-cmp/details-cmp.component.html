@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<!-- <table class="table table-hover">
   <thead>
   	<tr>
   		<th></th>
@@ -27,4 +27,36 @@
   		<td>{{item.atmosphericSpeed}}</td>
   	</tr>
   </tbody>
-</table>
+</table> -->
+<div class="outer__details">
+	<div class="container details">
+		<div class="row">
+			<div class="col-md-6 details__title">
+				<h1>{{item.name}}</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<img class="details__image" src="../../assets/{{item.img}}" alt="">
+			</div>
+			<div class="col-md-6">
+				<ul class="details__list">
+					<li><span class="list__title">Description: </span>{{item.desc}}</li>
+	      			<li><span class="list__title">Available from: </span>{{item.availability}}</li>
+					<li><span class="list__title">Cannons: </span>{{item.cannon}}</li>
+			  		<li><span class="list__title">Pickup Locations: </span>{{item.pickup}}</li>
+			  		<li><span class="list__title">Dropoff locations: </span>{{item.dropoff}}</li>
+			  		<li><span class="list__title">Seats amount: </span>{{item.seats}}</li>
+			  		<li><span class="list__title">Max Acceleration: </span>{{item.maxAcc}}</li>
+			  		<li><span class="list__title">Atmospheric speed: </span>{{item.atmosphericSpeed}}</li>
+				</ul>
+				<div class="details__checkout">
+					<p class="checkout__price">Price: {{price}}$/Day</p>
+					<input type="checkbox" (click)="setInsurance()"> Additional Isurance +20$<br>
+					<input type="checkbox" (click)="setLaser()"> Additional Laser +50$<br>
+					<button class="btn btn-success checkout__btn">Reserve</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

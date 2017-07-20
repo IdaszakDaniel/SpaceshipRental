@@ -1,35 +1,36 @@
-<table class="table table-hover">
-  <thead>
-  	<tr>
-  		<th></th>
-	  	<th>NAME</th>
-	  	<th>DESCRIPTION</th>
-      <th>AVAILABILITY</th>
-	  	<th>CANNON</th>
-	  	<th>PICK-UP</th>
-	  	<th>DROP-OFF</th>
-	  	<th>SEATS</th>
-	  	<th>MAX ACCELERATION</th>
-	  	<th>ATMOSPHERIC SPEED</th>
-      <th></th>
-  	</tr>
-  </thead>
-  <tbody >
-  	<tr *ngFor=" let spaceship of (data | imageFilter:queryBeginDate:queryEndDate:query.pickup:query.dropoff:query.cannon:query.maxAcc:query.atmSpeed:query.seats)">
-  		<td><img class="spaceship__image" src="../../assets/{{spaceship.img}}" alt=""></td>
-  		<td>{{spaceship.name}}</td>
-  		<td>{{spaceship.desc}}</td>
-      <td>{{spaceship.availability}}</td>
-  		<td>{{spaceship.cannon}}</td>
-  		<td>{{spaceship.pickup}}</td>
-  		<td>{{spaceship.dropoff}}</td>
-  		<td>{{spaceship.seats}}</td>
-  		<td>{{spaceship.maxAcc}}</td>
-  		<td>{{spaceship.atmosphericSpeed}}</td>
-      <td><button class="btn btn-success form-control" routerLink="/list/details" (click)="pickSpaceship(spaceship)">pick</button></td>
-  	</tr>
-  </tbody>
-</table>
-
-
-<!-- <app-search-cmp></app-search-cmp> -->
+<div class="list">
+  <div class="container-fluid">
+    <table class="table table-hover">
+      <thead>
+      	<tr>
+      		<th></th>
+    	  	<th>NAME</th>
+    	  	<th>DESCRIPTION</th>
+          <th>AVAILABILITY</th>
+    	  	<th>CANNON</th>
+    	  	<th>PICK-UP</th>
+    	  	<th>DROP-OFF</th>
+    	  	<th>SEATS</th>
+    	  	<th>MAX ACCELERATION</th>
+    	  	<th>ATMOSPHERIC SPEED</th>
+          <th></th>
+      	</tr>
+      </thead>
+      <tbody >
+      	<tr *ngFor=" let spaceship of (data | imageFilter:queryBeginDate:queryEndDate:query.pickup:query.dropoff:query.cannon:query.maxAcc:query.atmSpeed:query.seats)">
+      		<td><img class="spaceship__image" src="../../assets/{{spaceship.img}}" alt=""></td>
+      		<td>{{spaceship.name}}</td>
+      		<td>{{spaceship.desc.substr(0,50)}}...</td>
+          <td>{{spaceship.availability}}</td>
+      		<td>{{spaceship.cannon}}</td>
+      		<td>{{spaceship.pickup}}</td>
+      		<td>{{spaceship.dropoff}}</td>
+      		<td>{{spaceship.seats}}</td>
+      		<td>{{spaceship.maxAcc}}</td>
+      		<td>{{spaceship.atmosphericSpeed}}</td>
+          <td><button class="btn btn-success form-control" routerLink="/list/details" (click)="pickSpaceship(spaceship)">pick</button></td>
+      	</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
