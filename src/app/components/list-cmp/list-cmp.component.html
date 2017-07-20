@@ -4,25 +4,29 @@
   		<th></th>
 	  	<th>NAME</th>
 	  	<th>DESCRIPTION</th>
+      <th>AVAILABILITY</th>
 	  	<th>CANNON</th>
 	  	<th>PICK-UP</th>
 	  	<th>DROP-OFF</th>
 	  	<th>SEATS</th>
 	  	<th>MAX ACCELERATION</th>
 	  	<th>ATMOSPHERIC SPEED</th>
+      <th></th>
   	</tr>
   </thead>
   <tbody >
-  	<tr *ngFor=" let spaceship of (data | imageFilter:query.pickup:query.dropoff:query.cannon:query.seats)">
+  	<tr *ngFor=" let spaceship of (data | imageFilter:queryBeginDate:queryEndDate:query.pickup:query.dropoff:query.cannon:query.seats)">
   		<td><img class="spaceship__image" src="../../assets/{{spaceship.img}}" alt=""></td>
   		<td>{{spaceship.name}}</td>
   		<td>{{spaceship.desc}}</td>
+      <td>{{spaceship.availability}}</td>
   		<td>{{spaceship.cannon}}</td>
   		<td>{{spaceship.pickup}}</td>
   		<td>{{spaceship.dropoff}}</td>
   		<td>{{spaceship.seats}}</td>
-  		<td>{{spaceship.max-acc}}</td>
-  		<td>{{spaceship.atmospheric-speed}}</td>
+  		<td>{{spaceship.maxAcc}}</td>
+  		<td>{{spaceship.atmosphericSpeed}}</td>
+      <td><button (click)="pickSpaceship(spaceship)">pick</button></td>
   	</tr>
   </tbody>
 </table>

@@ -13,10 +13,18 @@ export class ListCmpComponent implements OnInit {
   data:any[] = [];	
   query:any;
   userQuery;
+  queryBeginDate:any;
+  queryEndDate:any;
+  x:any;
+
 
   constructor(public resourceService:ResourceService, userQueryService:UserQueryService) {
     this.userQuery = userQueryService;
     this.query = this.userQuery.getName();
+
+    this.queryBeginDate = new Date(this.query.date.beginDate.year, this.query.date.beginDate.month, this.query.date.beginDate.day);
+    this.queryEndDate = new Date(this.query.date.beginDate.year, this.query.date.beginDate.month, this.query.date.beginDate.day);
+
   	this.resourceService.getData().subscribe(users => {
   		this.data = users;
   	});
@@ -24,6 +32,10 @@ export class ListCmpComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  pickSpaceship(x){
+    console.log(x);
   }
 
 }

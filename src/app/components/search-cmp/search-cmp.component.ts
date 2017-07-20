@@ -54,7 +54,7 @@ export class SearchCmpComponent implements OnInit {
         dateFormat: 'dd.mm.yyyy',
   };
 
-  private model: Object = {beginDate: {year: 2018, month: 10, day: 9},
-                             endDate: {year: 2018, month: 10, day: 19}};
+  private model: Object = {beginDate: {year: 2017, month: 7, day: 21},
+                             endDate: {year: 2017, month: 7, day: 23}};
 
 }
