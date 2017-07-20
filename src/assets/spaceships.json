@@ -54,7 +54,7 @@
 	{
 		"name": "Slave 1",
 		"desc": "Slave I was a modified Firespray-31-class patrol and attack craft used by the infamous bounty hunter Jango Fett before the Clone Wars. Jango outfitted the craft with a number of weapons, including laser cannons, projectile launchers, and seismic charges. While under Jango's ownership, the ship was in a dogfight over Geonosis with the Jedi starfighter piloted by Obi-Wan Kenobi.",
-		"availability": [20,7,2017],
+		"availability": [23,7,2017],
 		"notAvailable": [28,7,2017],
 		"pickup": "Poznań",
 		"dropoff": ["Warszawa", "Wrocław", "Poznań"],

@@ -22,9 +22,11 @@ export class ListCmpComponent implements OnInit {
     this.userQuery = userQueryService;
     this.query = this.userQuery.getName();
 
-    this.queryBeginDate = new Date(this.query.date.beginDate.year, this.query.date.beginDate.month, this.query.date.beginDate.day);
-    this.queryEndDate = new Date(this.query.date.beginDate.year, this.query.date.beginDate.month, this.query.date.beginDate.day);
-
+    if(this.query.beginDate != undefined){
+      this.queryBeginDate = new Date(this.query.date.beginDate.year, this.query.date.beginDate.month, this.query.date.beginDate.day);
+      this.queryEndDate = new Date(this.query.date.beginDate.year, this.query.date.beginDate.month, this.query.date.beginDate.day);
+    }
+    
   	this.resourceService.getData().subscribe(users => {
   		this.data = users;
   	});
